@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
   <v-app style="background-color:#e5e7e6"> 
     <v-parallax
     dark
@@ -15,8 +14,8 @@
     </v-col>
     <v-col align="left">
       <v-card max-width="300px">Opa</v-card>
-=======
-  <v-app>
+    </v-col>
+  </v-row>
  <div class="ml-10 mt-10"><h1>Computadores</h1></div>
   <v-card class="ma-10" outlined>
         <v-card-title class="">
@@ -84,7 +83,6 @@
       <v-card-text class="grey darken-3 text-center white--text"><h3>Ocupar</h3></v-card-text>
       </v-card>
     </v-hover>
->>>>>>> 587ef45009b11b517ac963d73495c5dd7588896d
     </v-col>
   </v-row>
   <v-dialog v-model="dialogConfig" max-width="700px">
@@ -147,13 +145,6 @@
 </template>
 
 <script>
-<<<<<<< HEAD
-  export default {
-    data () {
-      return {
-      }
-    },
-=======
 export default {
   data(){
     return{
@@ -203,8 +194,8 @@ desserts: [
           },
         ],
     }
->>>>>>> 587ef45009b11b517ac963d73495c5dd7588896d
   }
+}
 </script>
 
 <style>
