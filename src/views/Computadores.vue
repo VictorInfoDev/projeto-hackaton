@@ -64,7 +64,7 @@
                   <h2>Nome do computador</h2> 
                 </th>
                 <th class="text-right">
-                  
+
                 </th>
               </tr>
             </thead>
@@ -271,4 +271,4 @@ export default {
 </script>
 
 <style>
-</style>
+</style> 
