@@ -83,7 +83,4 @@ export default {
 </script>
 
 <style>
-.imagemLogin{
-    cursor: pointer;
-}
-</style>
+</style> 
