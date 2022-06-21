@@ -16,12 +16,23 @@ const routes = [
         component: Home
       },
       {
-        path: '/about',
-        name: 'About',
-        component: () => import('../views/About.vue')
+        path: '/computadores',
+        name: 'Computadores',
+        component: () => import('../views/Computadores.vue')
       },
     ]
   },
+  {
+    path: '/',
+    component: () => import('@/layouts/Blank'),
+    children: [
+    {
+      path: '/login',
+      name: 'Login',
+      component: () => import('../views/Login.vue')
+    }
+   ]
+ },
 ]
 
 const router = new VueRouter({
