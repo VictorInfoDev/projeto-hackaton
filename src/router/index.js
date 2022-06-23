@@ -20,6 +20,11 @@ const routes = [
         name: 'Computadores',
         component: () => import('../views/Computadores.vue')
       },
+      {
+        path: '/projetos',
+        name: 'Projetos',
+        component: () => import('../views/Projetos.vue')
+      },
     ]
   },
   {
@@ -42,3 +47,4 @@ const router = new VueRouter({
 })
 
 export default router
+
