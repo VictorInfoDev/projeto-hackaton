@@ -1,4 +1,4 @@
-<template>
+<<template>
   <v-app>
     <div class="ma-10">
       <v-card max-width="100%" elevation="10">
@@ -141,6 +141,22 @@
         </v-row>
         </v-card-text>
       </v-card>
+        <v-card max-width="100%" elevation="10" class="mt-10">
+            <v-card-title>
+                <v-icon>mdi-clock-outline</v-icon><span class="ml-3">Agendamentos</span>
+            </v-card-title>
+            <v-divider></v-divider>
+            <v-card-text>
+                <template>
+                    <v-treeview 
+                    rounded
+                    hoverable
+                    activatable
+                    :items="items4"
+                    ></v-treeview>
+                </template>
+            </v-card-text>
+        </v-card>
     </div>
     <v-dialog v-model="dialogCadastroProjeto" max-width="700px" persistent>
         <v-card>
@@ -263,7 +279,7 @@
             <v-card-text class="light-blue darken-2 text-center pt-4" dark><v-btn @click="dialogCadastroProjeto = false" class="light-blue darken-2 white--text" elevation="0"><h2>Criar</h2></v-btn></v-card-text>
         </v-card>
     </v-dialog>
-    <v-dialog v-model="dialogInfoProjeto" persistent max-width="700px">
+    <v-dialog v-model="dialogInfoProjeto" max-width="700px">
         <v-card :style="{'background-image':'url(https://images7.alphacoders.com/809/809458.jpg)'}">
             <v-card-title class="light-blue darken-2 pa-5">
                 <v-icon color="white">mdi-folder-text-outline</v-icon><span class="ml-3 white--text">Informações do projeto</span>
@@ -381,13 +397,13 @@
                                 <v-list subheader>
                                     <v-list-item>
                                         <v-row>
-                                            <v-col cols="12" sm="9">
+                                            <v-col cols="12" sm="10">
                                                 <v-text-field
                                                     v-model="matriculaAlocada"
-                                                    label="Matrícula"
+                                                    label="Matrícula/SIAPE"
                                                 ></v-text-field>
                                             </v-col>
-                                            <v-col cols="12" sm="3">
+                                            <v-col cols="12" sm="2">
                                                 <v-btn class="success" fab>
                                                     <v-icon>mdi-plus</v-icon>
                                                 </v-btn>
@@ -418,14 +434,14 @@
                             <v-card-title>Computadores alocados</v-card-title>
                             <v-card-text>
                                         <v-row>
-                                            <v-col cols="12" sm="9">
+                                            <v-col cols="12" sm="10">
                                                 <v-combobox
                                                 label="Computadores disponíveis"
                                                 :items="items"
                                                 >
                                                 </v-combobox>   
                                             </v-col>
-                                            <v-col cols="12" sm="3">
+                                            <v-col cols="12" sm="2">
                                                 <v-btn class="success" fab @click="dialogAlocarComputador = true">
                                                     <v-icon>mdi-plus</v-icon>
                                                 </v-btn>
@@ -540,6 +556,7 @@ export default {
                 icon: 'mdi-account-tie',
                 avatar: 'https://cdn.vuetifyjs.com/images/lists/1.jpg',
                 title: 'Jason Oner',
+                iconDelete: 'mdi-close'
                 },
                 {
                 icon: 'mdi-account-school-outline',
@@ -563,7 +580,57 @@ export default {
             tasks: [
             ],
             newTask: null,
-                }
+            items4: [
+                {
+                id: 5,
+                name: 'Itrans - Instituto de Transporte',
+                children: [
+                    {
+                    id: 6,
+                    name: 'PC 01',
+                    children: [
+                            { id: 7, name: 'Bolsista : Felipe' },
+                            { id: 8, name: 'Hora/Entrada : 13:30' },
+                            { id: 9, name: 'hora/Saída : 14:30' },
+                            { id: 10, name: 'Data : seg/ter' },
+                    ],
+                    },
+                ],
+                },
+                {
+                id: 11,
+                name: 'Iprev- Instituto de previdência',
+                children: [
+                    {
+                    id: 12,
+                    name: 'PC 03',
+                    children: [
+                            { id: 13, name: 'Bolsista : Maria' },
+                            { id: 14, name: 'Hora/Entrada : 14:30' },
+                            { id: 15, name: 'hora/Saída : 15:30' },
+                            { id: 16, name: 'Data : qua/qui' },
+                    ],
+                    },
+                ],
+                },
+                {
+                id: 17,
+                name: 'Portal do aluno',
+                children: [
+                    {
+                    id: 18,
+                    name: 'PC 02',
+                    children: [
+                            { id: 19, name: 'Bolsista : Matheus' },
+                            { id: 20, name: 'Hora/Entrada : 16:30' },
+                            { id: 21, name: 'hora/Saída : 15:30' },
+                            { id: 22, name: 'Data : sex/seg' },
+                    ],
+                    },
+                ],
+                },
+            ],
+            }
     },
     computed: {
       completedTasks () {
