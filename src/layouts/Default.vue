@@ -3,6 +3,7 @@
     <v-app-bar app class="grey darken-4">
       <v-app-bar-nav-icon @click.stop="sidebar = !sidebar, showMenu = sidebar" color="light-blue darken-2"><v-icon v-if="showMenu==true">mdi-close</v-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
+      <v-icon large color="light-blue darken-2">mdi-share-variant</v-icon>
       <h2 class="font-weight-bold text-h2">
       <span class="white--text">S</span><span class="white--text">CA</span><span class="white--text">B</span> 
       </h2>
@@ -30,7 +31,7 @@
             >
           </v-list-item>
           <v-divider></v-divider>
-          <v-list-item class="text-center" to="/Info">
+          <v-list-item class="text-center" to="/Perfil">
             <v-list-item-title class=""
               >Configurações</v-list-item-title
             >
@@ -86,6 +87,7 @@ export default {
         { title: "Home", icon: "mdi-home",to: "/" },
         { title: "Computadores", icon: "mdi-monitor",to: "/Computadores" },
         { title: "Projetos", icon: "mdi-folder-text-outline", to: "/Projetos" },
+        { title: "Perfil", icon: "mdi-account-circle", to: "/Perfil"}
       ],
     };
   },
@@ -93,4 +95,3 @@ export default {
 </script>
 <style>
 </style>
-
