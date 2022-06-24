@@ -6,18 +6,31 @@
                         <v-card elevation="0" class="ma-10"><v-img src="../assets/iconAluno.png" height="180" width="180"></v-img></v-card>
                     </v-col>
                     <v-divider vertical class="mt-5 mb-5"></v-divider>
-                    <v-col cols="12" sm="5">
-                        <v-card elevation="0" class="ma-9">
-                            <v-card-title class="text-h4">Felipe de Luca</v-card-title>
+                    <v-col cols="12" sm="2">
+                        <v-card elevation="0" class="ma-5">
+                            <v-card-title class="text-h5">Felipe de Luca</v-card-title>
                             <v-card-text>
-                                <strong>Matrícula:</strong> 220720222 <br>
-                                <strong>Email:</strong> aluno8071@gmail.com <br>
-                                <v-btn class="mt-2" outlined>Mais informações</v-btn>
+                                  <strong>Matrícula:</strong> 220720222 <br>
+                                  <strong>Email:</strong> aluno8071@gmail.com <br>
+                                  <v-btn class="mt-3" outlined @click="perfilInfo = !perfilInfo">Mais informações</v-btn>
                             </v-card-text>
                         </v-card>
                     </v-col>
+                    <v-col cols="12" sm="3" class="mt-5">
+                      <v-alert transition="slide-x-transition" v-model="perfilInfo" class="mb-5">
+                          <v-card outlined>
+                            <div class="ma-3">
+                                <strong>Endereço:</strong> Rua Dona Lucia 283<br>
+                                <strong>CPF:</strong> 12345678911<br>
+                                <strong>Telefone:</strong> 47 99123-7523<br>
+                                <strong>Idade:</strong> 22 anos
+                            </div>
+                            <v-btn outlined class="ma-3">Editar informações</v-btn>
+                          </v-card>
+                        </v-alert>
+                    </v-col>
                     <v-divider vertical class="mt-5 mb-5"></v-divider>
-                    <v-col cols="12" sm="5">
+                    <v-col cols="12" sm="4">
                         <v-card elevation="0">
                             <v-card-title>
                                 Últimos projetos alocados
@@ -39,7 +52,7 @@
                 </v-row>
             </v-card>
             <v-divider></v-divider>
-    <v-card class="text-center mt-10" elevation="0"><span class="text-h3 purple--text"><strong>Timeline dos projetos</strong> </span></v-card>
+    <v-card class="text-center mt-10" elevation="0"><span class="text-h3"><strong>Timeline dos projetos</strong> </span></v-card>
     <v-timeline :dense="$vuetify.breakpoint.smAndDown" class="ma-15">
     <v-timeline-item
       color="primary"
@@ -145,7 +158,11 @@
 
 <script>
 export default {
-
+    data () {
+      return {
+        perfilInfo: false,
+      }
+    }
 }
 </script>
 
