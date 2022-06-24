@@ -1,4 +1,4 @@
-<<template>
+<template>
   <v-app>
     <div class="ma-10">
       <v-card max-width="100%" elevation="10">
