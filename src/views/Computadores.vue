@@ -34,11 +34,41 @@
       </v-card-text>
       <div align="center"><v-img src="../assets/iconPC.png" height="170" width="185" class="ma-2"></v-img></div>
       <v-card-text>
-        <h1><span class="info--text">{{  item_pc.nome  }}</span>/ <span class="">{{  item_pc.ilha  }}</span></h1><br>
+        <h1><span class="info--text">{{  item_pc.nome  }}</span>/ <span class="">{{  item_pc.ilha  }}</span></h1>
+        <v-card class="pa-1 mb-2 mt-2 warning"><v-icon small class="mr-2 ml-1" color="black">mdi-clock-outline</v-icon><span class="">Próximo horário: 20:30 - 21:30</span></v-card>  
         <b>Usuário: </b>{{  item_pc.nomeuser  }}<br>
         <b>Projeto:</b> {{  item_pc.projeto  }} <br>
         <b>Hora/entrada: </b>{{  item_pc.hre  }}<br>
         <b>Hora/saída: </b>{{  item_pc.hrs  }} 
+      </v-card-text>
+      <v-card-text class="grey darken-3 text-center white--text"><h3>Ocupar</h3></v-card-text>
+      </v-card>
+    </v-hover>
+    </v-col>
+    <v-col cols="12" sm="3">
+    <v-hover v-slot="{ hover }">
+      <v-card height="" width="" class="ma-10 mt-5"
+      :elevation="hover ? 12 : 5"
+      :class="{ 'on-hover': hover }"
+      @click="dialogOcuparComputador = true"
+      >
+      <v-card-text class="grey lighten-1 ">
+        <v-row>
+          <v-icon  class="ml-2" color="warning">mdi-brightness-1</v-icon>
+          <v-col :color="warning">
+            <span color=""><h2>Manutenção</h2></span>
+          </v-col>
+        </v-row>
+      </v-card-text>
+      <div align="center"><v-img src="../assets/iconPC.png" height="170" width="185" class="ma-2"></v-img></div>
+      <v-card-text>
+        <h1><span class="info--text">PC 03</span>/ <span class="">Ilha 03</span></h1>
+        <div class="mt-11">
+        <b>Usuário: </b> *<br>
+        <b>Projeto:</b> * <br>
+        <b>Hora/entrada: </b>*<br>
+        <b>Hora/saída: </b>* 
+        </div>
       </v-card-text>
       <v-card-text class="grey darken-3 text-center white--text"><h3>Ocupar</h3></v-card-text>
       </v-card>
@@ -287,7 +317,6 @@ export default {
       pc:[
         {nome: "PC 01", nomeuser:"Felipe Mendes", hre:"18:30", hrs:"19:30", status:"Indisponível", color:'error', projeto:"Hackaton", ilha:"Ilha 01"},
         {nome: "PC 02", nomeuser:"Nenhum", hre:"Livre", hrs:"Livre", status:"Disponível", color:'success', projeto:"Nenhum", ilha:"Ilha 02"},
-        {nome: "PC 03", nomeuser:"*", hre:"*", hrs:"*", status:"Manutenção", color:'warning', projeto:"*", ilha:"Ilha 03"}
       ],
       desserts: [
           {
