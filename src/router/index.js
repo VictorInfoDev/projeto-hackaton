@@ -25,6 +25,11 @@ const routes = [
         name: 'Projetos',
         component: () => import('../views/Projetos.vue')
       },
+      {
+        path: '/perfil',
+        name: 'Perfil',
+        component: () => import('../views/Perfil.vue')
+      },
     ]
   },
   {
@@ -47,4 +52,3 @@ const router = new VueRouter({
 })
 
 export default router
-
