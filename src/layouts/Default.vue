@@ -2,12 +2,13 @@
   <v-app>
     <v-app-bar app class="grey darken-4">
       <v-app-bar-nav-icon @click.stop="sidebar = !sidebar, showMenu = sidebar" color="light-blue darken-2"><v-icon v-if="showMenu==true">mdi-close</v-icon></v-app-bar-nav-icon>
-      <v-spacer></v-spacer>
-      <v-icon large color="light-blue darken-2">mdi-share-variant</v-icon>
-      <h2 class="font-weight-bold text-h2">
-      <span class="white--text">S</span><span class="white--text">CA</span><span class="white--text">B</span> 
-      </h2>
-      <v-spacer></v-spacer>
+      <v-icon color="light-blue darken-2">mdi-share-variant</v-icon><span class="white--text text-h4 mr-5"><strong>SCAB</strong></span>
+      <v-tabs max-width="300px">
+        <v-tab class="white--text" to="/">Home</v-tab>
+        <v-tab class="white--text" to="/Computadores">Computadores</v-tab>
+        <v-tab class="white--text" to="/Projetos">Projetos</v-tab>
+        <v-spacer></v-spacer>
+      </v-tabs>
       <v-menu transition="slide-y-transition" left>
         <template v-slot:activator="{ on, attrs }">
           <v-icon v-bind="attrs" v-on="on" color="light-blue darken-2"
